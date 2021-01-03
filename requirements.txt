@@ -1,0 +1,5 @@
+kivy==2.0.0rc4
+https://github.com/kivymd/KivyMD/archive/master.zip
+youtube-search-python
+googletrans
+BeautifulSoup4

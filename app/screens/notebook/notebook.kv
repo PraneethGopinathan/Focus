@@ -1,0 +1,157 @@
+#:import Window kivy.core.window.Window
+
+
+<Notebook>:
+    name: 'notebook'
+    id: notebookscreen
+    md_bg_color: app.bg_color
+
+    GridLayout:
+        cols: 1
+        id: box_root
+        padding: dp(min(Window.height/720*20, Window.width/1280*20))
+        spacing: dp(20*Window.height/720)
+
+        BoxLayout:
+            size_hint: (1, 0.2)
+
+            AnchorLayout:
+
+                HoverIconButton:
+                    icon: app.home_icon
+                    tooltip_text: app.home_icon_tooltip
+                    theme_text_color: 'Custom'
+                    text_color: app.title_text_color
+                    user_font_size: str((Window.height/720)*80) + 'sp'
+                    on_release:
+                        app.switch_screen('mainmenu', 'up')
+                        self.canvas_opacity = 0
+                        root.cleanup()
+                        scroller.scroll_y = 1
+                        Window.remove_widget(self.tooltip)
+
+            MDLabel:
+                text: 'Notebook'
+                font_name: app.app_font
+                theme_text_color: 'Custom'
+                text_color: app.title_text_color
+                halign: 'center'
+                valign: 'middle'
+                font_size: str((Window.height/720)*60) + 'sp'
+
+            AnchorLayout:
+
+                HoverIconButton:
+                    icon: app.add_icon
+                    tooltip_text: app.add_icon_tooltip
+                    theme_text_color: "Custom"
+                    text_color: app.title_text_color
+                    user_font_size: str((Window.height/720)*80) + 'sp'
+                    on_release:
+                        root.add_note()
+
+        AnchorLayout:
+            size_hint: (1, 0.75)
+
+            CustomScroll:
+                size_hint: (0.9, 1)
+                id: scroller
+                smooth_scroll_end: 10
+                bar_width: 10
+                scroll_type: ['bars']
+                bar_inactive_color: self.bar_color
+                effect_cls : 'ScrollEffect'
+                scroll_distance: dp((Window.height/720)*20)
+                scroll_wheel_distance: dp((Window.height/720)*30)
+
+                StackLayout:
+                    id: scroll_box
+                    size_hint: (1, None)
+                    height: self.minimum_height
+                    padding: dp(15), 0
+                    spacing: dp((Window.height/720)*20)
+
+
+<Note>:
+    md_bg_color: app.tile_color
+    cols: 1
+    size_hint: (1, None)
+    height: self.minimum_height
+    padding: dp(min(Window.height/720*20, Window.width/1280*20))
+    spacing: dp(15*Window.height/720)
+
+    GridLayout:
+        rows: 1
+        size_hint: (1, None)
+        height: self.minimum_height
+        spacing: dp(10*Window.width/1280)
+
+        TitleInput:
+            id: title
+            font_name: app.app_font
+            multiline: False
+            size_hint: (0.5, None)
+            height: self.minimum_height
+            font_size: str(min(Window.height/720*20, Window.width/1280*20)) + 'sp'
+            foreground_color: app.text_color
+            background_color: app.tile_color
+            readonly: True
+            cursor_color: app.accent_color
+            cursor_blink: False
+            cursor_width: app.cursor_width
+            background_normal: 'atlas://data/images/defaulttheme/textinput_active'
+
+        MDLabel:
+            id: date
+            font_name: app.app_font
+            size_hint: (0.13, 1)
+            theme_text_color: 'Custom'
+            text_color: app.text_color
+            halign: 'center'
+            font_size: str(min((Window.height/720)*20, (Window.width/1280)*20)) + 'sp'
+
+        HoverFlatButton:
+            id: edit_button
+            text: "EDIT"
+            size_hint: (0.11, 1)
+            on_release:
+                root.parent.parent.parent.parent.parent.edit_note(root)
+
+        HoverFlatButton:
+            id: delete_button
+            text: "DELETE"
+            size_hint: (0.11, 1)
+            disabled: False
+            on_release:
+                root.parent.parent.parent.parent.parent.delete_note(root)
+
+        HoverFlatButton:
+            id: updatedate_button
+            text: "UPDATE DATE"
+            size_hint: (0.17, 1)
+            disabled: False
+            on_release:
+                root.parent.parent.parent.parent.parent.update_date(root)
+
+    TextInput:
+        id: body
+        size_hint: 1, None
+        height: self.minimum_height 
+        font_name: app.app_font
+        font_size: str(min((Window.height/720)*20, (Window.width/1280)*20)) + 'sp'
+        foreground_color: app.text_color
+        background_color: app.tile_color
+        readonly: True
+        cursor_color: app.accent_color
+        cursor_blink: False
+        background_normal: 'atlas://data/images/defaulttheme/textinput_active'
+        cursor_width: app.cursor_width
+
+
+<HoverFlatButton>:
+    font_name: app.app_font
+    color: app.text_color
+    background_normal: ''
+    background_down: ''
+    background_color: app.raised_button_color
+    font_size: str(min((Window.height/720)*20, (Window.width/1280)*20)) + 'sp'

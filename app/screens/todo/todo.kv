@@ -1,0 +1,156 @@
+#:import Window kivy.core.window.Window
+
+
+<ToDo>:
+    name: 'todo'
+    id: todoscreen
+    md_bg_color: app.bg_color
+
+    GridLayout:
+        cols: 1
+        id: box_root
+        padding: dp(min(Window.height/720*20, Window.width/1280*20))
+        spacing: dp(20*Window.height/720)
+
+        BoxLayout:
+            size_hint: (1, 0.2)
+
+            AnchorLayout:
+
+                HoverIconButton:
+                    icon: app.home_icon
+                    tooltip_text: app.home_icon_tooltip
+                    theme_text_color: 'Custom'
+                    text_color: app.title_text_color
+                    user_font_size: str((Window.height/720)*80) + 'sp'
+                    on_release:
+                        app.switch_screen('mainmenu', 'up')
+                        root.cleanup()
+                        self.canvas_opacity = 0
+                        scroller.scroll_y = 1
+                        Window.remove_widget(self.tooltip)
+
+            MDLabel:
+                text: 'To-do'
+                font_name: app.app_font
+                theme_text_color: 'Custom'
+                text_color: app.title_text_color
+                halign: 'center'
+                valign: 'middle'
+                font_size: str((Window.height/720)*60) + 'sp'
+
+            AnchorLayout:
+
+                HoverIconButton:
+                    icon: app.add_icon
+                    tooltip_text: app.add_icon_tooltip
+                    theme_text_color: "Custom"
+                    text_color: app.title_text_color
+                    user_font_size: str((Window.height/720)*80) + 'sp'
+                    on_release:
+                        root.add_task()
+
+        AnchorLayout:
+            size_hint: (1, 0.75)
+
+            CustomScroll:
+                size_hint: (0.9, 1)
+                id: scroller
+                smooth_scroll_end: 10
+                bar_width: 10
+                scroll_type: ['bars']
+                bar_inactive_color: self.bar_color
+                effect_cls : 'ScrollEffect'
+                scroll_distance: dp((Window.height/720)*20)
+                scroll_wheel_distance: dp((Window.height/720)*30)
+
+                StackLayout:
+                    id: scroll_box
+                    size_hint: (1, None)
+                    height: self.minimum_height
+                    spacing: dp((Window.height/720)*20)
+
+
+<Task>:
+    md_bg_color: app.tile_color
+    cols: 1
+    size_hint: (1, None)
+    height: self.minimum_height
+    padding: dp(10*Window.height/720)
+    spacing: dp(10*Window.height/720)
+
+    TextInput:
+        id: title
+        font_name: app.app_font
+        size_hint: (1, None)
+        height: self.minimum_height
+        font_size: str((Window.height/720)*20) + 'sp'
+        foreground_color: app.text_color
+        background_color: app.tile_color
+        readonly: False
+        cursor_color: app.accent_color
+        cursor_blink: False
+        cursor_width: app.cursor_width
+        background_normal: 'atlas://data/images/defaulttheme/textinput_active'
+        readonly: True
+
+    GridLayout:
+        rows: 1
+        size_hint: (1, None)
+        height: self.minimum_height
+        spacing: dp(20*Window.width/1280)
+
+        AnchorLayout:
+            size_hint_y: None
+            height: dp((Window.height/720)*25)
+
+            HoverFlatButton:
+                id: edit_button
+                text: 'EDIT TASK'
+                on_release:
+                    root.parent.parent.parent.parent.parent.edit_task(root)
+
+        AnchorLayout:
+            anchor_x: 'left'
+            size_hint_y: None
+            height: dp((Window.height/720)*25)
+
+            HoverFlatButton:
+                id: task_status_button
+                text: 'COMPLETE TASK' if not root.status else 'UNDO TASK'
+                on_release:
+                    root.parent.parent.parent.parent.parent.update_status(root)
+
+        AnchorLayout:
+            size_hint_y: None
+            height: dp((Window.height/720)*25)
+
+            MDLabel:
+                id: task_status
+                text: 'Task done!' if root.status else 'Task remaining'
+                font_name: app.app_font
+                size_hint: (0.7, 1)
+                theme_text_color: 'Custom'
+                text_color: app.text_color
+                valign: 'middle'
+                halign: 'center'
+                font_size: str(min((Window.height/720)*20, (Window.width/1280)*20)) + 'sp'
+
+        AnchorLayout:
+            size_hint_y: None
+            height: dp((Window.height/720)*25)
+
+            HoverFlatButton:
+                id: delete_button
+                text: 'DELETE TASK'
+                on_release:
+                    root.parent.parent.parent.parent.parent.delete_task(root)
+                    
+
+<HoverFlatButton>:
+    font_name: app.app_font
+    color: app.text_color
+    background_normal: ''
+    background_down: ''
+    background_color: app.raised_button_color
+    font_size: str(min((Window.height/720)*18, (Window.width/1280)*18)) + 'sp'
