@@ -29,13 +29,13 @@ class ToDo(MDScreen):
     def delete_task(self, task_widget):
         self.database.delete_item(task_widget.unique_id)
         self.initialize_tasks()
-        toast('Task deleted.', duration=0.3)
+        toast('Task deleted.', duration=1)
 
     def add_task(self):
         added = self.database.add_item('', 0)
         if added:
             self.initialize_tasks()
-            toast('Task Created.', duration=0.3)
+            toast('Task Created.', duration=1)
         else:
             toast('Cannot add task.', duration=1)
 
@@ -63,7 +63,7 @@ class ToDo(MDScreen):
             self.database.update_item_content(
                 task_widget.unique_id, task_widget.ids.title.text)
             task_widget.ids.edit_button.text = "EDIT TASK"
-            toast('Note data saved.', duration=0.3)
+            toast('Note data saved.', duration=1)
 
     def cleanup(self):
         for task_widget in self.ids.scroll_box.children:

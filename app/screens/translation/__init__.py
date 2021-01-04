@@ -112,7 +112,7 @@ class Translation(MDScreen):
                 except Exception as e:
                     show_toast(
                         'An Error occurred. Check your internet connection.',
-                        duration=1)
+                        duration=2)
             else:
                 try:
                     self.translated_text = None
@@ -122,7 +122,7 @@ class Translation(MDScreen):
                 except Exception as e:
                     show_toast(
                         'An Error occurred. Check your internet connection.',
-                        duration=1)
+                        duration=2)
         else:
             pass
 
