@@ -47,7 +47,7 @@ resource_add_path(resource_path(os.path.join('screens', 'settings')))
 resource_add_path(resource_path(os.path.join('screens', 'about')))
 
 
-class StudentPortal(MDApp):
+class Focus(MDApp):
 
     title = "Focus"
     icon = 'icon.ico'
@@ -247,4 +247,4 @@ class StudentPortal(MDApp):
 
 
 if __name__ == '__main__':
-    StudentPortal().run()
+    Focus().run()
