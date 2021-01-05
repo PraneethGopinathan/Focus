@@ -4,6 +4,8 @@
 
 # Focus
 
+## [Python](https://www.python.org/) related
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 All your needs as a student just a click away.
 
 Student life, often mentioned as the "seed time" of life is undoubtedly the most important time for any person to build their life. Success of a person depends on how well s/he utilizes the time. And without a doubt, student life is the best time for it. To make the life of a student a bit more easy, we made 'Focus', a simple yet useful app to help the student push their limit a bit more further.
