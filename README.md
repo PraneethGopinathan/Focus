@@ -28,10 +28,7 @@ python main.py # Run the app
 
 Now enjoy the app 😉.
 
-Here is a simple gif on how to install it if you are still confused.
-
-![how to install](http://res.cloudinary.com/muhimen/image/upload/v1604124914/sp_how_to_install.gif)
-
+***
 ## USAGE
 
 8 different modules, 8 different usage(if you count the about section too 😅)
@@ -87,14 +84,6 @@ We love your open source enthusiasm. Seeing an app grow a bigger community is po
 
 However, once the judgement phase finishes, we will make this app open source again and we will start receiving pull requests. 😉
 
-***
-
-## Easter Eggs! 🥚🥚
-Oh, yeah! Forgot to mention, our app also has easter eggs. Try finding some. Here is a quick one, search `fireplank` in `wikipedia` module.
-
-I am pretty sure that's not what you expected. 😆
-
-***
 
 Huh? 🤨 Wot dis? Click at your own risk!
 
