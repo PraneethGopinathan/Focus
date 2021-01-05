@@ -11,20 +11,13 @@ This app is bundled with 8 different modules with their own use cases starting f
 
 ## Installation
 
-We provided with 2 ways to install the app.
 
-- By installing the installer from the releases
-- By running the script
-
-We recommend using the installer if you don't have python properly installed in your machine.
-https://github.com/FirePlank/Student-Portal/releases
-
-However, if you want to run the scripts, then you must have [python](https://www.python.org/downloads/) and [git](https://git-scm.com/downloads) properly installed in your machine. Then use these 5 simple commands to run the app.
+To run the scripts, then you must have [python](https://www.python.org/downloads/) and [git](https://git-scm.com/downloads) properly installed in your machine. Then use these 5 simple commands to run the app.
 
 ```bash
-git clone https://github.com/FirePlank/Student-Portal.git # it clones the repository in your machine
+git clone https://github.com/PraneethGopinathan/Focus.git # it clones the repository in your machine
 
-cd Student-Portal # Change your working directory
+cd Focus # Change your working directory
 
 pip install -r requirements.txt # Install all the dependencies, might take time depending on your internet speed
 
