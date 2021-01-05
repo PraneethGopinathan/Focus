@@ -1,6 +1,6 @@
 # Focus-main
 
-<div align="center"> <img src="https://res.cloudinary.com/mr-chathan/video/upload/v1609853843/20210105_1857311_ojlwvd.mp4" alt="logo">
+<div align="center"> <img src="https://res.cloudinary.com/mr-chathan/image/upload/v1609853842/20210105_185942_0000_ylaorv.png" alt="logo">
 </div>
 
 # Focus
