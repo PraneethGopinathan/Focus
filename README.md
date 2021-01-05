@@ -1,6 +1,3 @@
-<div align="center"> <img src="https://res.cloudinary.com/mr-chathan/image/upload/v1609853842/20210105_185942_0000_ylaorv.png" alt="logo">
-</div>
-
 # Focus
 
 ## [Python](https://www.python.org/) related
