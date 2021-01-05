@@ -17,13 +17,13 @@ To run the scripts, then you must have [python](https://www.python.org/downloads
 
 `git clone https://github.com/PraneethGopinathan/Focus.git` # it clones the repository in your machine
 
-cd Focus # Change your working directory
+`cd Focus` # Change your working directory
 
-pip install -r requirements.txt # Install all the dependencies, might take time depending on your internet speed
+`pip install -r requirements.txt` # Install all the dependencies, might take time depending on your internet speed
 
-cd app # Again change the directory
+`cd app` # Again change the directory
 
-python main.py # Run the app
+`python main.py` # Run the app
 
 
 Now enjoy the app 😉.
