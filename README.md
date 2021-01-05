@@ -28,6 +28,9 @@ To run the scripts, then you must have [python](https://www.python.org/downloads
 
 Now enjoy the app 😉.
 
+### Built by...
+[![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://GitHub.com/PraneethGopinathan/)
+
 ## USAGE
 
 8 different modules, 8 different usage(if you count the about section too 😅)
