@@ -28,7 +28,6 @@ python main.py # Run the app
 
 Now enjoy the app 😉.
 
-****
 ## USAGE
 
 8 different modules, 8 different usage(if you count the about section too 😅)
