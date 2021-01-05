@@ -14,7 +14,7 @@ This app is bundled with 8 different modules with their own use cases starting f
 
 To run the scripts, then you must have [python](https://www.python.org/downloads/) and [git](https://git-scm.com/downloads) properly installed in your machine. Then use these 5 simple commands to run the app.
 
-```python3
+```console
 git clone https://github.com/PraneethGopinathan/Focus.git # it clones the repository in your machine
 
 cd Focus # Change your working directory
