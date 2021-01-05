@@ -1,6 +1,6 @@
 # Focus
 
-## [Python](https://www.python.org/) related
+## Python related
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 All your needs as a student just a click away.
