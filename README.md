@@ -90,5 +90,5 @@ However, once the judgement phase finishes, we will make this app open source ag
 Huh? 🤨 Wot dis? Click at your own risk!
 
 <div align="center">
-    <a href="https://bit.ly/2EqoBMo"> <img src="https://www.flaticon.com/svg/static/icons/svg/3325/3325082.svg" height=100 width=100 alt="red" style="align:center"> </a>
+    <a href="https://youtu.be/Hr_9b-Lt-pk?t=12s"> <img src="https://www.flaticon.com/svg/static/icons/svg/3325/3325082.svg" height=100 width=100 alt="red" style="align:center"> </a>
 </div>
